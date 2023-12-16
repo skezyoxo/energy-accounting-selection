@@ -54,7 +54,7 @@ function suggestTasks() {
         }
     };
 
-    suggestions.innerHTML = "Suggested Tasks: <ul>" +
+    suggestions.innerHTML = "<u>Suggested Tasks</u> <ul>" +
         tasks[selectedEnergy][selectedTime].map(task => "<li>" + task + "</li>").join("") +
         "</ul>";
 }
