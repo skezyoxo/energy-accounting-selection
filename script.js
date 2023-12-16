@@ -4,11 +4,13 @@ var selectedTime = '10'; // Default value
 function selectEnergy(energy) {
     selectedEnergy = energy;
     updateButtonStyles(document.querySelectorAll('.energy-button'), energy);
+    suggestTasks();
 }
 
 function selectTime(time) {
     selectedTime = time;
     updateButtonStyles(document.querySelectorAll('.time-button'), time);
+    suggestTasks();
 }
 
 function updateButtonStyles(buttons, value) {
