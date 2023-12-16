@@ -3,23 +3,33 @@ var selectedTime = '10'; // Default value
 
 function selectEnergy(energy) {
     selectedEnergy = energy;
-    updateButtonStyles(document.querySelectorAll('.energy-button'), energy);
+    updateButtonStyles(document.querySelectorAll('.energy-button'), energy, true);
     suggestTasks();
 }
 
 function selectTime(time) {
     selectedTime = time;
-    updateButtonStyles(document.querySelectorAll('.time-button'), time);
+    updateButtonStyles(document.querySelectorAll('.time-button'), time, false);
     suggestTasks();
 }
 
-function updateButtonStyles(buttons, value) {
+function updateButtonStyles(buttons, value, isEnergyButton) {
     buttons.forEach(button => {
-        var expectedText = value === '60' ? '1 hour' : value + ' minutes';
-        if (button.innerText.trim() === expectedText) {
-            button.classList.add('selected');
+        if (isEnergyButton) {
+            // For energy buttons, just compare the button text with the value
+            if (button.innerText.toLowerCase() === value) {
+                button.classList.add('selected');
+            } else {
+                button.classList.remove('selected');
+            }
         } else {
-            button.classList.remove('selected');
+            // For time buttons, adjust the expected text based on the value
+            var expectedText = value === '60' ? '1 hour' : value + ' minutes';
+            if (button.innerText.trim() === expectedText) {
+                button.classList.add('selected');
+            } else {
+                button.classList.remove('selected');
+            }
         }
     });
 }
