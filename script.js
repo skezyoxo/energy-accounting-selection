@@ -15,7 +15,8 @@ function selectTime(time) {
 
 function updateButtonStyles(buttons, value) {
     buttons.forEach(button => {
-        if (button.innerText.trim() === value + (value === '60' ? ' hour' : ' minutes')) {
+        var expectedText = value === '60' ? '1 hour' : value + ' minutes';
+        if (button.innerText.trim() === expectedText) {
             button.classList.add('selected');
         } else {
             button.classList.remove('selected');
