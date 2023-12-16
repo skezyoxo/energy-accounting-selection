@@ -10,7 +10,8 @@ body {
     margin: 5px;
     border: 2px solid #ddd;
     border-radius: 10px;
-    background-color: white;
+    background-color: #e7e7e7; /* Light grey background */
+    color: #333; /* Visible text color */
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -40,6 +41,7 @@ button:hover {
     padding: 10px;
     background-color: white;
     border-radius: 10px;
+    width: 50%; /* Adjusted width */
     min-height: 50px;
 }
 
