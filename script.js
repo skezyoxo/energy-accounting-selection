@@ -1,8 +1,28 @@
-function suggestTasks() {
-    var energy = document.getElementById("energy").value;
-    var time = document.getElementById("time").value;
-    var suggestions = document.getElementById("suggestions");
+var selectedEnergy = 'low'; // Default value
+var selectedTime = '10'; // Default value
 
+function selectEnergy(energy) {
+    selectedEnergy = energy;
+    updateButtonStyles(document.querySelectorAll('.energy-button'), energy);
+}
+
+function selectTime(time) {
+    selectedTime = time;
+    updateButtonStyles(document.querySelectorAll('.time-button'), time);
+}
+
+function updateButtonStyles(buttons, value) {
+    buttons.forEach(button => {
+        if (button.innerText.toLowerCase().includes(value)) {
+            button.classList.add('selected');
+        } else {
+            button.classList.remove('selected');
+        }
+    });
+}
+
+function suggestTasks() {
+    var suggestions = document.getElementById("suggestions");
     var tasks = {
         low: {
             "10": ["Meditate", "Read a short article"],
@@ -21,11 +41,12 @@ function suggestTasks() {
         }
     };
 
-    suggestions.innerHTML = "Suggested Tasks: <ul>" + 
-        tasks[energy][time].map(task => "<li>" + task + "</li>").join("") + 
+    suggestions.innerHTML = "Suggested Tasks: <ul>" +
+        tasks[selectedEnergy][selectedTime].map(task => "<li>" + task + "</li>").join("") +
         "</ul>";
 }
 
 window.onload = function() {
-    suggestTasks(); // Suggest tasks initially
+    selectEnergy(selectedEnergy);
+    selectTime(selectedTime);
 };
