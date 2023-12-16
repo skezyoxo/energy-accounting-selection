@@ -1,14 +1,54 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Garamond', serif;
     margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+select, button {
+    font-family: 'Garamond', serif;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px; /* Rounded edges */
+    background-color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button {
+    color: white;
+    background-color: #4CAF50; /* Green background for the button */
+    border: none;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
 }
 
 label {
-    margin-right: 10px;
+    display: block;
+    margin-top: 20px;
 }
 
 #suggestions {
     margin-top: 20px;
     border: 1px solid #ddd;
     padding: 10px;
+    background-color: white;
+    border-radius: 10px; /* Rounded edges */
+    min-height: 50px;
+}
+
+/* Add custom styles for list inside suggestions */
+#suggestions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#suggestions li {
+    margin: 5px 0;
+    padding: 3px;
+    background-color: #e7e7e7;
+    border-radius: 5px; /* Rounded edges for list items */
 }
