@@ -42,3 +42,9 @@ body {
     background-color: #e7e7e7;
     border-radius: 5px;
 }
+
+#suggestions u {
+    display: inline-block; 
+    border-bottom: 2px solid currentColor; 
+    padding-bottom: 3px; 
+}
