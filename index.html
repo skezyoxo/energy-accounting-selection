@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Suggester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <label for="energy">Energy Level:</label>
+        <select id="energy">
+            <option value="low">Low</option>
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+        </select>
+    </div>
+    <div>
+        <label for="time">Time Available:</label>
+        <select id="time">
+            <option value="10">10 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+        </select>
+    </div>
+    <button onclick="suggestTasks()">Suggest Tasks</button>
+    <div id="suggestions"></div>
+    <script src="script.js"></script>
+</body>
+</html>
