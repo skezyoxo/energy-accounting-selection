@@ -44,7 +44,7 @@ body {
 }
 
 #suggestions u {
-    display: inline-block; 
-    border-bottom: 2px solid currentColor; 
-    padding-bottom: 3px; 
+    text-decoration: underline;
+    text-decoration-thickness: 2px; 
+    text-underline-offset: 3px; 
 }
